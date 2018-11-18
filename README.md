@@ -74,7 +74,7 @@ So basically, now you have 4 clients making requests to the same server simultan
 
 #### Docker
 
-Photon can be launched using a lightweight Python-Alpine (103 MB) Docker image.
+Photon can be launched using a lightweight Python-Alpine (87.5 MB) Docker image.
 
 ```bash
 $ git clone https://github.com/s0md3v/Photon.git
@@ -86,7 +86,7 @@ $ docker run -it --name photon photon:latest -u google.com
 To view results, you can either head over to the local docker volume, which you can find by running `docker inspect photon` or by mounting the target loot folder:
 
 ```bash
-$ docker run -it --name photon -v "$PWD:/Photon/google.com" photon:latest -u google.com
+$ docker run -it --name photon -v $(pwd):/photon/google.com" photon:latest -u google.com
 ```
 
 #### Frequent & Seamless Updates
