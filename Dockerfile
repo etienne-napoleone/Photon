@@ -6,11 +6,11 @@ LABEL creator s0md3v
 LABEL dockerfile_maintenance khast3x
 LABEL desc "Incredibly fast crawler designed for reconnaissance."
 
-RUN apk add git && git clone https://github.com/s0md3v/Photon.git Photon
-WORKDIR Photon
+WORKDIR /photon
+COPY requirements.txt .
 RUN pip install -r requirements.txt
+COPY . .
 
-VOLUME [ "/Photon" ]
-# ENTRYPOINT ["sh"]
+VOLUME [ "/photon" ]
 ENTRYPOINT [ "python", "photon.py" ]
 CMD ["--help"]
